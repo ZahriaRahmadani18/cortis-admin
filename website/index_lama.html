@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CORTIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ================= VIEW: HOME / ABOUT ================= -->
+  <div id="view-home" class="app-view view-home-root active-view">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.jpeg" alt="CORTIS Logo" onclick="scrollToSection('home')" />
+      </div>
+
+      <ul class="menu">
+        <li class="active" onclick="scrollToSection('home')" data-nav="home" id="nav-home">
+          HOME
+        </li>
+        <li onclick="scrollToSection('about')" data-nav="about" id="nav-about">
+          ABOUT
+        </li>
+        <li onclick="switchView('news')" id="nav-news">NEWS</li>
+        <li onclick="switchView('tour')" id="nav-tour">TOUR</li>
+        <li onclick="switchView('music')" id="nav-music">MUSIC</li>
+        <li onclick="openOfficialShop(event)" id="nav-shop" title="Buka Toko Resmi (Tab Baru)">SHOP <i
+            class="fa-solid fa-arrow-up-right-from-square"
+            style="font-size: 0.72em; margin-left: 3px; vertical-align: baseline;"></i></li>
+      </ul>
+
+      <div class="language">
+        <button class="lang-btn" id="home-langBtn">ENG ▼</button>
+        <div class="language-menu" id="home-languageMenu">
+          <p>🇬🇧 English</p>
+          <p>🇮🇩 Indonesia</p>
+          <p>🇰🇷 Korea</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ══════════════ HOME ══════════════ -->
+    <section id="home">
+      <video id="myVideo" autoplay muted loop playsinline>
+        <source src="media/video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="home-overlay"></div>
+
+      <div class="hero-content">
+        <h1>CORTIS</h1>
+        <p id="subtitle">DEBUT • 2025.08.18</p>
+      </div>
+
+      <button id="soundToggle" class="sound-btn">🔇</button>
+    </section>
+
+    <!-- ══════════════ ABOUT ══════════════ -->
+    <section id="about">
+      <!-- TITLE -->
+      <div class="page-title">
+        <h1 id="aboutTitle">ABOUT CORTIS</h1>
+        <p id="aboutSubtitle">
+          Discover the story behind CORTIS and meet the members.
+        </p>
+      </div>
+
+      <!-- HERO SLIDER -->
+      <div class="hero-slider">
+        <div class="slider-track">
+          <div class="slide active">
+            <img src="images/group.jpg" alt="CORTIS Group" />
+          </div>
+          <div class="slide"><img src="images/group2.jpg" alt="Group 2" /></div>
+          <div class="slide"><img src="images/group3.jpg" alt="Group 3" /></div>
+          <div class="slide"><img src="images/group4.jpg" alt="Group 4" /></div>
+          <div class="slide"><img src="images/group5.jpg" alt="Group 5" /></div>
+        </div>
+        <button class="slider-btn prev" id="home-prevBtn">&#8249;</button>
+        <button class="slider-btn next" id="home-nextBtn">&#8250;</button>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="about-description">
+        <p id="aboutDesc">
+          CORTIS (MARTIN, JAMES, JUHOON, SEONGHYEON, and KEONHO) is the first
+          boy band in 6 years to debut under BIGHIT MUSIC, the powerhouse label
+          behind iconic global groups like BTS and TOMORROW X TOGETHER. The name
+          CORTIS is an unconventional mix of six letters drawn from the phrase
+          "COLOR OUTSIDE THE LINES," reflecting their determination to think
+          beyond the boundaries defined by the world. True to their name, CORTIS
+          is a crew of self-driven creatives who bring raw authenticity to
+          everything they create, from music and choreography to video content.
+          All five members draw from personal stories to showcase their
+          inimitable creativity across songwriting, composition, performance,
+          and videography. What sets them apart is their collaborative approach:
+          rather than adhering to fixed roles, they work together as co-creators
+          to bring their collective vision to life.
+        </p>
+      </div>
+
+      <!-- MEMBERS -->
+      <div class="members">
+        <h2 id="memberTitle">MEMBER</h2>
+        <div class="member-grid">
+          <div class="member-card">
+            <img src="images/member1.jpg" alt="KEONHO" />
+            <h3 class="member-name">KEONHO</h3>
+            <span class="member-birth">February 14. 2009</span>
+          </div>
+          <div class="member-card">
+            <img src="images/member2.jpg" alt="MARTIN" />
+            <h3 class="member-name">MARTIN</h3>
+            <span class="member-birth">March 20. 2008</span>
+          </div>
+          <div class="member-card">
+            <img src="images/member3.jpg" alt="JAMES" />
+            <h3 class="member-name">JAMES</h3>
+            <span class="member-birth">October 14. 2005</span>
+          </div>
+          <div class="member-card">
+            <img src="images/member4.jpg" alt="SEONGHYEON" />
+            <h3 class="member-name">SEONGHYEON</h3>
+            <span class="member-birth">January 13. 2009</span>
+          </div>
+          <div class="member-card">
+            <img src="images/member5.jpg" alt="JUHOON" />
+            <h3 class="member-name">JUHOON</h3>
+            <span class="member-birth">January 3. 2008</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="footer-label" data-id="Ikuti kami" data-en="Follow us" data-ko="팔로우하기">Follow us</p>
+      <div class="social">
+        <a href="https://youtube.com/@cortis_bighit?si=2WTCTQN6FWWpvtYV" target="_blank" rel="noopener noreferrer"
+          aria-label="YouTube" class="social-link" data-url="https://youtube.com/@cortis_bighit?si=2WTCTQN6FWWpvtYV">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://x.com/cortis_bighit" target="_blank" rel="noopener noreferrer" aria-label="X Twitter"
+          class="social-link" data-url="https://x.com/cortis_bighit">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/cortis?igsh=bWhrc2l4enk5YTFw" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram" class="social-link" data-url="https://www.instagram.com/cortis?igsh=bWhrc2l4enk5YTFw">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@cortis_bighit?is_from_webapp=1&sender_device=pc" target="_blank"
+          rel="noopener noreferrer" aria-label="TikTok" class="social-link"
+          data-url="https://www.tiktok.com/@cortis_bighit?is_from_webapp=1&sender_device=pc">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+      <p class="footer-copy">© 2025 CORTIS · BIGHIT MUSIC</p>
+    </footer>
+
+  </div>
+
+  <!-- ================= VIEW: NEWS ================= -->
+  <div id="view-news" class="app-view view-news-root">
+
+    <div class="bg-overlay"></div>
+
+    <main class="news-page">
+
+      <section class="news-header">
+        <!-- Judul Utama dengan atribut translasi -->
+        <h1 id="newsTitle" data-id="BERITA" data-en="NEWS" data-ko="뉴스">NEWS</h1>
+
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search news...">
+          <button type="button" class="search-btn">🔍</button>
+        </div>
+      </section>
+
+      <section class="news-grid" id="newsGrid"></section>
+    </main>
+
+
+  </div>
+
+  <!-- ================= VIEW: TOUR ================= -->
+  <div id="view-tour" class="app-view view-tour-root">
+
+    <!-- TOUR PAGE -->
+
+    <section class="tour-page">
+
+      <div class="tour-frame">
+
+        <div class="tour-title-box">
+          CORTIS
+        </div>
+
+        <h1 class="tour-title" id="tourTitle">
+          DEADLINE WORLD
+        </h1>
+
+        <h3 class="tour-subtitle" id="tourSubtitle">
+          TOUR
+        </h3>
+
+        <div class="tour-list">
+
+          <div class="tour-card">
+
+            <h2 id="city1">CHIBA</h2>
+
+            <p id="location1">📍 Chiba, Chiba, Japan</p>
+
+            <p id="venue1">🏟 Makuhari Messe</p>
+
+            <p id="date1">📅 May 10, 2026</p>
+
+          </div>
+
+          <div class="tour-card">
+
+            <h2 id="city2">INCHEON</h2>
+
+            <p id="location2">📍 Incheon, South Korea</p>
+
+            <p id="venue2">🏟 KSP Dome</p>
+
+            <p id="date2">📅 Jun 07, 2026</p>
+
+          </div>
+
+          <div class="tour-card">
+
+            <h2 id="city3">JAKARTA</h2>
+
+            <p id="location3">📍 Jakarta, Indonesia</p>
+
+            <p id="venue3">🏟 Indonesia Arena</p>
+
+            <p id="date3">📅 Jun 28, 2026</p>
+
+          </div>
+
+          <div class="tour-card">
+
+            <h2 id="city4">BROOKLYN</h2>
+
+            <p id="location4">📍 Brooklyn, New York</p>
+
+            <p id="venue4">🏟 Duggal Greenhouse</p>
+
+            <p id="date4">📅 Oct 18, 2025</p>
+
+          </div>
+
+          <div class="tour-card">
+
+            <h2 id="city5">BURBANK</h2>
+
+            <p id="location5">📍 Burbank, California</p>
+
+            <p id="venue5">🏟 iHeartRadio Theater</p>
+
+            <p id="date5">📅 Oct 13, 2025</p>
+
+          </div>
+
+          <div class="tour-card">
+
+            <h2 id="city6">SEOUL</h2>
+
+            <p id="location6">📍 Seoul, South Korea</p>
+
+            <p id="venue6">🏟 Korea University Gymnasium</p>
+
+            <p id="date6">📅 Sep 08, 2025</p>
+
+          </div>
+        </div>
+
+    </section>
+
+
+  </div>
+
+  <!-- ================= VIEW: MUSIC ================= -->
+  <div id="view-music" class="app-view view-music-root">
+    <video id="bgVideo" autoplay muted loop>
+      <source src="" type="video/mp4" />
+    </video>
+    <div class="bg-overlay"></div>
+
+    <section class="music-page">
+      <h1>MUSIC PLAYLIST</h1>
+
+      <div class="playlist">
+        <div class="song-card" data-title="REDRED" data-artist="CORTIS" data-video="media/redred.mp4"
+          data-audio="media/redred.mp3" data-cover="media/redred.jpg" data-release-date="April 20, 2026"
+          data-streams="85210000" data-lyrics="[00:00.80]Green, green
+          [00:02.40]따바라 한 모금 sip (Ooh)
+          [00:04.10]Caffeine 또 kickin' in
+          [00:05.90]어젯밤에 만들던 beat
+          [00:07.70]내 폰에다 담아서 거리로 나가서
+          [00:09.90]다섯이 고개를 빙빙
+          [00:11.70]입꼬린 올라가, 히히
+          [00:13.50]핸드폰 바꿔 놔 D-N-D
+          [00:15.20]Seeing all kinds of green, green
+          [00:17.10]쉿, 한파에 (한파에)
+          [00:19.00]I put my hands in my pocket (Pocket)
+          [00:20.90]Outside, 한 밤에 (한 밤에)
+          [00:22.70]사람 없는 스팟으로 빨리 (Brr)
+          [00:24.60]I'll do that shit all with my team (Team)
+          [00:26.40]누군가 싫어할 짓 (짓)
+          [00:28.25]알 바가 아니여 get it, get it
+          [00:30.10]신호등 바뀌었어 green, green
+          [00:32.00]팔랑귀 팔랑귀 (That's red, red)
+          [00:33.80]눈치나 살피기 (That's red, red)
+          [00:35.70]도가니 사리기 (That's red, red)
+          [00:37.55]넘어가 울타리 green, green
+          [00:39.40]궁뎅이 가리기 (That's red, red)
+          [00:41.20]주변을 살피기 (That's red, red)
+          [00:43.10]쿨한 척 척하기 (That's red, red)
+          [00:44.90]You should come mess with the team
+          [00:46.85]내 친구들 전부 한 트럭에다 담아서
+          [00:49.00]거리로 나가서 빙빙
+          [00:50.85]거리서 돌다가 돌아가 studio
+          [00:52.65]Cookin' up 'til we get stinky
+          [00:54.50]팔랑귀 팔랑귀 (That's red, red)
+          [00:56.35]눈치나 살피기 (That's red, red)
+          [00:58.20]도가니 사리기 (That's red, red)
+          [01:00.00]You should come mess with the team
+          [01:01.90]They called me a freak, 홀린 듯이, yeah
+          [01:03.85]만들던 tracks, yeah, 듣고 모인 friends, yeah
+          [01:05.70]하루가 갈수록 늘어가 pack
+          [01:07.50]진짜배기처럼 밟아가 step (Ah)
+          [01:09.40]Screaming loud like yeah, yeah
+          [01:11.25]고개 까딱여 like yeah, yeah
+          [01:13.10]F1,들지 마 red flag
+          [01:14.95]You should come mess with the team (Tell me what's red)
+          [01:16.95]차갑게 방치된 city (That's red)
+          [01:18.75]먼지가 쌓인 그 CD (That's red)
+          [01:20.60]정숙한 무대는 시시해
+          [01:22.30]답답해 정수리 시뻘게지지 (That's red)
+          [01:24.40]We gotta pop out to show how
+          [01:26.20]다시 배워 봐, you gotta note down
+          [01:28.05]불러와 버려 두 번째 혼란
+          [01:29.90]신호등 바뀌었어 green, green
+          [01:31.75]팔랑귀 팔랑귀 (That's red, red)
+          [01:33.65]눈치나 살피기 (That's red, red)
+          [01:35.50]도가니 사리기 (That's red, red)
+          [01:37.35]넘어가 울타리 green, green
+          [01:39.25]궁뎅이 가리기 (That's red, red)
+          [01:41.10]주변을 살피기 (That's red, red)
+          [01:42.95]쿨한 척 척하기 (That's red, red)
+          [01:44.80]You should come mess with the team
+          [01:46.70]Ayy (Yeah, yeah)
+          [01:48.50]Turn it up, ayy
+          [01:50.35]I told you to turn it up
+          [01:52.15]I don't mess with no stupid red signs
+          [01:54.10]신호등 바뀌었어 green, green
+          [01:55.95]팔랑귀 팔랑귀 (That's red, red)
+          [01:57.85]눈치나 살피기 (That's red, red)
+          [01:59.70]도가니 사리기 (That's red, red)
+          [02:01.50]넘어가 울타리 green, green
+          [02:03.40]궁뎅이 가리기 (That's red, red)
+          [02:05.25]주변을 살피기 (That's red, red)
+          [02:07.10]쿨한 척 척하기 (That's red, red)
+          [02:08.90]You should come mess with the team
+          [02:10.85]내 친구들 전부 한 트럭에다 담아서
+          [02:12.90]거리로 나가서 빙빙
+          [02:14.75]거리서 돌다가 돌아가 studio
+          [02:16.60]Cookin' up 'til we get stinky
+          [02:18.40]팔랑귀 팔랑귀 (That's red, red)
+          [02:20.30]눈치나 살피기 (That's red, red)
+          [02:22.15]도가니 사리기 (That's red, red)
+          [02:24.00]You should come mess with the team">
+          <div class="cover-wrapper">
+            <img src="media/redred.jpg" alt="cover" />
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="song-info">
+            <div class="song-title-row">
+              <h3>REDRED</h3>
+              <span class="song-rank-badge">#2</span>
+            </div>
+            <p class="song-artist">CORTIS</p>
+            <div class="song-meta">
+              <span class="song-release"><i class="fa-regular fa-calendar-alt"></i> Release: Apr 20, 2026</span>
+              <span class="song-streams"><i class="fa-solid fa-headphones"></i> 85,210,000 streams</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="song-card" data-title="GO!" data-artist="CORTIS" data-video="media/go.mp4" data-audio="media/go.mp3"
+          data-cover="media/go.jpg" data-release-date="April 20, 2026" data-streams="98450000" data-lyrics="[00:01.00]우린 필요 없어 다른 sign
+          [00:03.25]Paint the town, 초록색의 lights
+          [00:03.95]페달에 발을 올려, 마치 bike
+          [00:05.80]I just gotta get it
+          [00:07.65]Watch me go, go, go, go, go, go
+          [01:11.40]I just gotta get it
+          [01:13.25]Watch me go, go, go, go, go, go
+          [01:16.95]I just gotta get it
+          [01:18.85]가져와 new beat, 가져와 new hit
+          [01:20.70]가져와 new sheet, 만들어 new shit
+          [01:22.55]가져와 new beat, 가져와 new hit
+          [01:24.40]가져와 new sheet, I'm on the new shit
+          [01:26.25]Drippy, 고장 난 듯 배수관이, yeah, yeah
+          [01:28.15]불러와 new wave, Poseidon 같이 (uh, uh)
+          [01:30.00]Martin (that's on fire), play that beat (that's on fire)
+          [01:31.85]Yeah, 작업실에서 불을 피워 밤도 대낮같이 (yeah)
+          [01:33.70]우린 오늘 만들었지 and this track is so sick
+          [01:35.55]레벨 좀 더 키워 이 노래는 달려 도시를 (도시, yeah)
+          [01:37.40]우린 필요 없어 다른 sign (okay, okay)
+          [01:39.25]Paint the town, 초록색의 lights (yeah, lights)
+          [01:41.15]페달에 발을 올려, 마치 bike (yeah, yeah)
+          [01:43.00]I just gotta get it
+          [01:44.85]Watch me go, go, go, go, go, go
+          [01:48.55]I just gotta get it
+          [01:50.45]Watch me go, go, go, go, go, go
+          [01:54.10]I just gotta get it
+          [01:56.00]어렸을 때부터 난 동네서 좀 특이했어 (pow, pow, pow, pow, pow)
+          [01:59.70]Yeah, 맘은 이미 pop star back at 중이 때 (yeah, yeah, yeah, yeah)
+          [02:03.40]우린 모자 눌러쓰고 new era 추진해 (ay, ay)
+          [02:05.25]우릴 보고 엄지 들어 모든 구시대, yeah
+          [02:07.15]Watch me, I'm gon' spit it, pop and pop, 난 지금 hit mode
+          [02:09.00]Hitman처럼 hit 만들고 싶어서 난 reload (reload)
+          [02:10.85]치키치키 reload, uh-uh, reload (ay)
+          [02:12.70]신호 주면 바로 던져넣어, 마치 free throw
+          [02:14.55]우린 필요 없어 다른 sign
+          [02:16.40]Paint the town, 초록색의 lights
+          [02:18.25]페달에 발을 올려, 마치 bike
+          [02:20.10]I just gotta get it
+          [02:21.95]Watch me go, go, go, go, go, go
+          [02:25.70]I just gotta get it
+          [02:27.55]Watch me go, go, go, go, go, go
+          [02:31.25]I just gotta get it
+          [02:33.15]가져와 new beat, 가져와 new hit
+          [02:35.00]가져와 new sheet, 만들어 new shit
+          [02:36.85]가져와 new beat, 가져와 new hit
+          [02:38.70]가져와 new sheet, I'm on the new shit">
+          <div class="cover-wrapper">
+            <img src="media/go.jpg" alt="cover" />
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="song-info">
+            <div class="song-title-row">
+              <h3>GO!</h3>
+              <span class="song-rank-badge">#1</span>
+            </div>
+            <p class="song-artist">CORTIS</p>
+            <div class="song-meta">
+              <span class="song-release"><i class="fa-regular fa-calendar-alt"></i> Release: Apr 20, 2026</span>
+              <span class="song-streams"><i class="fa-solid fa-headphones"></i> 98,450,000 streams</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="song-card" data-title="FaShioN" data-artist="CORTIS" data-video="media/fashion.mp4"
+          data-audio="media/fashion.mp3" data-cover="media/fashion.jpg" data-release-date="August 18, 2025"
+          data-streams="64890000" data-lyrics="[00:00.35]내 티, five bucks, 바지는 만원
+          [00:02.20]My vision 몇 억s, 몇 조s, Bezos
+          [00:04.05]동묘, what's up? 홍대, what's up? (워워)
+          [00:05.85]I make 'em famous, I call that, 'Fashion' (워워)
+          [00:07.75]Fashion, fashion, fashion, fashion (워, let's go)
+          [00:09.60]Fashion, fashion, fashion, fashion (what, what, what?)
+          [00:11.45]내 티, five bucks, 바지는 만원
+          [00:13.30]Let's get it (yeah), let's go, fashion, fashion (huh, huh)
+          [00:15.15]안건호, 내가 산 옷 보고 뭐라고 말해도, 지켜 내 고집 (yeah)
+          [00:17.00]후르츠 찜해 놓은 상품에 있었던 벨트는, now on my 허리, huh
+          [00:18.85]Sorry, my granny, 요즘 왜 안 오니? 섭하신 동묘 할머니
+          [00:20.70]여긴 비행기, huh, L.A.에서 앨범을 끝내고, 멋있게 돌아와, back on my swag
+          [00:22.55]Huh, huh, 외화 talk, huh, 환율 올라 매일 (빠빠)
+          [00:24.40]구제 판, got me looking fresh (빠빠)
+          [00:26.25]Pull up, boys, 샥샥 긁어내 (skrrt, skrrt)
+          [00:28.10]빈티지져스 (지져스)
+          [00:29.05]동묘에서 모여, 마치 세미나
+          [00:29.95]홍대에서 모여, 우린 set it off (set it off)
+          [00:31.80]청-청-청담동 한가운데까지, spreading out (yeah, brr)
+          [00:33.65]Squad is on the way, but we can't wrap it up (yeah)
+          [00:35.50]내 티, five bucks, 바지는 만원
+          [00:37.35]My vision 몇 억s, 몇 조s, Bezos
+          [00:39.20]동묘, what's up? 홍대, what's up? (워워)
+          [00:41.05]I make 'em famous, I call that, 'Fashion' (워워)
+          [00:42.90]Fashion, fashion, fashion, fashion (brr, let's go)
+          [00:44.75]Fashion, fashion, fashion, fashion (what, what, what?)
+          [00:46.60]내 티, five bucks, 바지는 만원 (yeah)
+          [00:48.45]Let's get it, let's go (let's go), fashion, fashion
+          [00:50.30]Yeah, sim장이 pop out, 첫눈에 바로 cop-cop
+          [00:52.15]Okay, 구제 짬밥 삼만원짜리 잠바
+          [00:54.00]Ay-yay-yay, feel like rock star, 확 met gala로 갈라, let's go
+          [00:55.85]Top designers, 홍대 맛보고, 환장 fashion
+          [00:57.70]Come and try, 동묘 生活에서, 난
+          [00:59.10]체력을 많이 닦아 놔, mosh pit 하는 법 배워 놔
+          [01:00.95]배워봐, 배워봐, 너도 빨리 배워 봐
+          [01:02.80]옷 무덤 속 다시 태어나, 빈티지져스 came alive
+          [01:04.65]동묘에서 모여, 마치 세미나
+          [01:05.60]홍대에서 모여, 우린 set it off (set it off)
+          [01:07.45]청-청-청담동 한가운데까지, spreading out (yeah, brr)
+          [01:09.30]Squad is on the way, but we can't wrap it up (yeah, skrrt)
+          [01:11.15]내 티, five bucks, 바지는 만원
+          [01:13.00]My vision 몇 억s, 몇 조s, Bezos
+          [01:14.85]동묘, what's up? 홍대, what's up? (워워)
+          [01:16.70]I make 'em famous, I call that, 'Fashion'
+          [01:18.55]Fashion, fashion, fashion, fashion (워, let's go)
+          [01:20.40]Fashion, fashion, fashion, fashion
+          [01:22.25]Fashion, fashion, fashion, fashion (워, let's go)
+          [01:24.10]Fashion, fashion, fashion, fashion (what, what?)
+          [01:25.95]Fashion, fashion, fashion, fashion (let's go)
+          [01:27.80]Fashion, fashion, fashion, fashion
+          [01:29.65]Fashion, fashion, fashion, fashion (워, let's go)
+          [01:31.50]Fashion, fashion, fashion, fashion (what? Fashion)">
+          <div class="cover-wrapper">
+            <img src="media/fashion.jpg" alt="cover" />
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="song-info">
+            <div class="song-title-row">
+              <h3>FaShioN</h3>
+              <span class="song-rank-badge">#3</span>
+            </div>
+            <p class="song-artist">CORTIS</p>
+            <div class="song-meta">
+              <span class="song-release"><i class="fa-regular fa-calendar-alt"></i> Release: Aug 18, 2025</span>
+              <span class="song-streams"><i class="fa-solid fa-headphones"></i> 64,890,000 streams</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="song-card" data-title="JoyRide" data-artist="CORTIS" data-video="media/joyride.mp4"
+          data-audio="media/joyride.mp3" data-cover="media/joyride.jpg" data-release-date="April 20, 2026"
+          data-streams="39780000" data-lyrics="[00:00.40]Ooh, ooh, ooh
+          [00:03.80]갇혀 이 건물 속에 밤새
+          [00:05.95]No sun, no sky, 얼굴은 창백 all day
+          [00:08.30]미쳐 난 flipping 마치 fried eggs, pancakes
+          [00:10.70]Bloodshot eyes tonight, 도망가 여길 벗어나
+          [00:13.10]Cause, ooh
+          [00:14.80]우리는 꿈꿔왔지 찰나의 해방
+          [00:17.25]달려 부릉
+          [00:18.50]트렁크에다 콜라 채워, 얼른 밟아 그 pedal
+          [00:20.75]이 자릴 떠 지도는 집어치워 'cause we're on a joyride
+          [00:23.75]더 세게 speed it up 지금 기분 so high
+          [00:26.25]Driving so fast, 가로질러 긴 밤
+          [00:28.75]Day to night, ride, we're on a joyride
+          [00:31.25]Yeah, yeah, yeah, we're on a joyride
+          [00:33.75]Yeah, yeah, yeah, we're on a joyride
+          [00:36.25]Driving so fast, 가로질러 긴 밤
+          [00:38.75]Day to night, ride, we're on a joyride
+          [00:41.40]범생이는 나의 past tense
+          [00:43.50]학교는 찍먹 아지트로 came back
+          [00:45.95]開세상이 폭풍이면 난
+          [00:47.50]내 drip 아래 춰 rain dance
+          [00:49.55]종일 뛰었었지
+          [00:50.70]폭주는 내 personality
+          [00:51.95]마치 MJ, ever since '23
+          [00:53.95]Rat snakes, 담을 넘었지
+          [00:55.80]Cause, ooh
+          [00:57.25]우리는 꿈꿔왔지 찰나의 해방
+          [00:59.75]달려 부릉
+          [01:01.00]트렁크에다 콜라 채워, 얼른 밟아 그 pedal
+          [01:03.25]이 자릴 떠 지도는 집어치워 'cause we're on a joyride
+          [01:06.25]더 세게 speed it up 지금 기분 so high
+          [01:08.75]Driving so fast, 가로질러 긴 밤
+          [01:11.25]Day to night, ride, we're on a joyride
+          [01:13.75]Yeah, yeah, yeah, we're on a joyride
+          [01:16.25]Yeah, yeah, yeah, we're on a joyride
+          [01:18.75]Driving so fast, 가로질러 긴 밤
+          [01:21.25]Day to night, ride, we're on a joyride">
+          <div class="cover-wrapper">
+            <img src="media/joyride.jpg" alt="cover" />
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="song-info">
+            <div class="song-title-row">
+              <h3>JoyRide</h3>
+              <span class="song-rank-badge">#5</span>
+            </div>
+            <p class="song-artist">CORTIS</p>
+            <div class="song-meta">
+              <span class="song-release"><i class="fa-regular fa-calendar-alt"></i> Release: Apr 20, 2026</span>
+              <span class="song-streams"><i class="fa-solid fa-headphones"></i> 39,780,000 streams</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="song-card" data-title="What You Want" data-artist="CORTIS" data-video="media/whatyouwant.mp4"
+          data-audio="media/whatyouwant.mp3" data-cover="media/whatyouwant.jpg" data-release-date="August 18, 2025"
+          data-streams="52140000" data-lyrics="[00:00.10]Crash, smash, rock, mash up
+          [00:01.75]Ooh, take what you want
+          [00:03.55]돈, 멋, 명예, love and what?
+          [00:05.35]Ooh, take what you want
+          [00:07.75]Life's too fast, 뭘 더 참아, 이젠 됐어 (What you want?)
+          [00:10.45]I want to see the whole world
+          [00:12.20]도장 찍어, 나의 passport (What you want?)
+          [00:14.55]Well, 이마에 피도 안 말랐을 때 계획한 행보 (What you want?)
+          [00:16.95]바라던 걸 찾아 집을 떠나 what we came for
+          [00:19.35]Crash, smash, rock, mash up
+          [00:21.15]Ooh, take what you want
+          [00:22.95]돈, 멋, 명예, love and what?
+          [00:24.75]Ooh, take what you want
+          [00:26.80]적당히론 배가 차지 않아 (않아)
+          [00:28.55]들이켜, yuh, 마치 하마 (하마)
+          [00:30.35]Smelling like a teen, 마치 Nirvana (Nirvana)
+          [00:32.20]소리쳐, yuh, 'cause we wanna
+          [00:34.60]That's what we all looking for
+          [00:36.45]That's what we all looking for
+          [00:38.25]That's what we all looking for
+          [00:40.05]That's what we all looking (One, two, three) for
+          [00:42.45]난 걍 돌아갈 바엔 바로 넘어버려 담장 (What you want?)
+          [00:45.15]난 원해 다시 뛰게 할 무언갈, 나의 심장 (What you want?)
+          [00:47.55]야밤, 새벽 배송 같은 fresh song, I need that (What you want?)
+          [00:59.95]I want the whole world to wake up and realize
+          [01:02.35]Some people want this, some people want that
+          [01:04.20]나도 똑같아 17년 평생
+          [01:06.00]쫓았었던 love, 쫓았었던 fame
+          [01:07.80]So now, I want the whole world to know my name
+          [01:10.25]Crash, smash, rock, mash up
+          [01:12.05]Ooh, take what you want
+          [01:13.85]돈, 멋, 명예, love and what?
+          [01:15.65]Ooh, take what you want
+          [01:17.75]적당히론 배가 차지 않아 (않아)
+          [01:19.50]들이켜, yuh, 마치 하마 (하마)
+          [01:21.30]Smelling like a teen, 마치 Nirvana (Nirvana)
+          [01:23.15]소리쳐, yuh, 'cause we wanna
+          [01:25.55]That's what we all looking for
+          [01:27.40]That's what we all looking for
+          [01:29.20](That's what we all—) Da-ra-da-ra-ra
+          [01:31.00]That's what we all looking (One, two, three) for
+          [01:33.40]What you want?
+          [01:34.65]What you want?
+          [01:35.85]What you want?
+          [01:37.05]What you want?
+          [01:38.30]What you want?">
+          <div class="cover-wrapper">
+            <img src="media/whatyouwant.jpg" alt="cover" />
+            <div class="play-overlay">▶</div>
+          </div>
+          <div class="song-info">
+            <div class="song-title-row">
+              <h3>What You Want</h3>
+              <span class="song-rank-badge">#4</span>
+            </div>
+            <p class="song-artist">CORTIS</p>
+            <div class="song-meta">
+              <span class="song-release"><i class="fa-regular fa-calendar-alt"></i> Release: Aug 18, 2025</span>
+              <span class="song-streams"><i class="fa-solid fa-headphones"></i> 52,140,000 streams</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="playerModal">
+      <div class="player-container">
+        <video id="playerVideo" autoplay muted loop></video>
+        <div class="player-overlay"></div>
+
+        <button id="closeBtn">✕</button>
+
+        <div class="player-left">
+          <img id="playerCover" alt="cover" />
+          <h2 id="playerTitle"></h2>
+          <p id="playerArtist"></p>
+          <div class="player-extra-meta">
+            <span id="playerReleaseDate"><i class="fa-regular fa-calendar-alt"></i> Release Date: -</span>
+            <span id="playerStreams" class="player-streams"><i class="fa-solid fa-headphones"></i> - streams</span>
+          </div>
+        </div>
+
+        <div class="player-right">
+          <div class="lyrics-box">
+            <h3>Lyrics</h3>
+            <div id="lyricsContent"></div>
+          </div>
+
+          <div class="controls">
+            <div class="progress-container">
+              <span id="currentTime">0:00</span>
+              <input type="range" id="mainProgressBar" value="0" />
+              <span id="duration">0:00</span>
+            </div>
+            <div class="buttons">
+              <button id="shuffleBtn">🔀</button>
+              <button id="prevBtn">⏮</button>
+              <button id="playBtn">▶</button>
+              <button id="nextBtn">⏭</button>
+              <button id="repeatBtn">🔁</button>
+            </div>
+            <div class="volume-box">
+              🔊
+              <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
