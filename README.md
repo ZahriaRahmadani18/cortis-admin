@@ -1,50 +1,50 @@
-# CORTIS Admin Dashboard (AdminLTE)
+# CORTIS Admin Dashboard + Website
 
-Dashboard admin untuk mengelola seluruh 18 tabel database `cortis_db` (website CORTIS):
-**Create** (tambah), **Read** (lihat, cari, urut, halaman), **Update** (ubah), dan **Delete** (hapus).
-Tampilan memakai template **AdminLTE 4** (Bootstrap 5) dengan tema gelap + magenta CORTIS.
+Ini tugas Praktikum Pemrograman Web (Kelompok 6). Isinya dashboard admin pakai AdminLTE buat ngelola
+18 tabel di database `cortis_db`, sama website CORTIS yang ngambil datanya dari database yang sama.
 
-## Cara menjalankan (XAMPP)
+- **Dashboard admin** (CRUD semua tabel): folder utama
+- **Website CORTIS** (nampilin data dari database): folder `website/`
 
-1. Nyalakan **Apache** dan **MySQL** di XAMPP Control Panel.
-2. Impor database: buka `localhost/phpmyadmin` > tab **Impor** > pilih `database/cortis_db.sql` > Kirim.
-3. Salin folder ini ke `C:\xampp\htdocs\cortis-admin`.
-4. Buka `http://localhost/cortis-admin/` di browser.
+## Cara Menjalankan (XAMPP)
 
-Jika MySQL-mu memakai password, ubah di `koneksi.php`. Perlu koneksi internet agar ikon dan font AdminLTE tampil (dimuat dari CDN).
+1. Nyalain **Apache** dan **MySQL** di XAMPP.
+2. Copy folder proyek ini ke `C:\xampp\htdocs\cortis-admin` (sesuaikan sama lokasi XAMPP-nya).
+3. Buka phpMyAdmin (`http://localhost/phpmyadmin`), terus **import** file `database/cortis_db.sql`.
+   Database `cortis_db` bakal kebuat otomatis lengkap sama 18 tabel dan data awalnya.
+4. Kalau MySQL-nya pakai password, ubah dulu `koneksi.php` dan `website/koneksi.php`
+   (bawaan XAMPP: user `root`, password kosong).
+5. Buka di browser:
+   - Dashboard admin: `http://localhost/cortis-admin/`
+   - Website: `http://localhost/cortis-admin/website/`
 
-## Struktur file
+### Soal lokasi folder
+Folder proyeknya boleh dikasih nama lain, asal folder `website` tetap ada di dalam folder dashboard.
+Pengaturannya ada di `website/config.php` (`url_admin` = `../`), supaya gambar yang diupload lewat
+dashboard (`uploads/`) bisa muncul di website.
 
-| File | Fungsi |
+### Video nggak ikut di-upload
+File video `video.mp4` dan `redred.mp4` ukurannya gede banget, jadi nggak saya upload ke GitHub.
+Kalau mau videonya jalan, taruh filenya di `website/media/`. Kalau nggak ada, bagian lain
+website tetap jalan normal, cuma video di Home dan lagu yang kosong.
+
+## Hubungan Dashboard dan Website
+
+Data yang diubah di dashboard langsung kelihatan di website setelah halamannya di-refresh.
+
+| Menu dashboard | Tampil di website |
 |---|---|
-| `index.php` | Dashboard: kartu 18 tabel beserta jumlah datanya |
-| `tabel.php` | **Read**: daftar data satu tabel (cari, urut kolom, paginasi) + tombol Ubah dan Hapus |
-| `form.php` | **Create** dan **Update**: formulir tambah/ubah untuk semua tabel |
-| `hapus.php` | **Delete**: hapus satu baris (POST + token CSRF) |
-| `koneksi.php` | Koneksi database (PDO) |
-| `config/tables.php` | Daftar 18 tabel, kolom, tipe, dan relasi (foreign key) |
-| `includes/` | Fungsi bantu dan kerangka halaman AdminLTE |
-| `css/adminlte.css` | Stylesheet AdminLTE |
-| `css/cortis-theme.css` | Tema gelap + magenta (ubah warna di blok `:root` paling atas) |
-| `config/tampilan.php` | Lokasi folder website agar foto/cover/logo tampil di dashboard |
-| `uploads/` | Tujuan unggah gambar dari form |
-| `database/cortis_db.sql` | Struktur 18 tabel + data awal |
+| Home (banner) | Video dan tanggal debut di Home |
+| About: konten, slide, member | Deskripsi, slider foto, dan daftar member |
+| News | Halaman News (3 bahasa) |
+| Tour | Halaman Tour (3 bahasa) |
+| Music: lagu dan baris lirik | Daftar lagu dan lirik di pemutar |
+| Settings: menu, sosial media, bahasa | Menu navigasi dan ikon sosial media |
 
-## Fitur
+Lirik diisi lewat **Music → Baris Lirik → Tempel Lirik**. Pakai format `[mm:ss.xx]teks` biar
+liriknya pas sama lagunya.
 
-- Satu set halaman untuk semua tabel (berdasarkan `config/tables.php`).
-- Kolom relasi (foreign key) tampil sebagai **dropdown** berisi data tabel induknya.
-- Validasi sisi server (wajib diisi, angka, tanggal, panjang teks, pilihan).
-- Pesan error yang jelas saat data duplikat atau saat data masih dipakai tabel lain.
-- Kolom gambar: isi path gambar atau unggah file baru (JPG/PNG/GIF/WEBP, maks. 2 MB).
-- Password admin disimpan sebagai hash bcrypt.
-- Query memakai prepared statement; hapus memakai POST dan token CSRF.
-
-## Menampilkan foto, cover, dan logo
-
-Database menyimpan path seperti `images/member1.jpg`. Agar gambarnya tampil di dashboard, pilih salah satu:
-
-1. Salin folder `images/` (dan `media/`) dari website ke dalam folder `cortis-admin/`, atau
-2. Isi `url_website` di `config/tampilan.php`, misalnya `'../cortis/'` jika website ada di `htdocs/cortis`.
-
-Logo opsional: letakkan `images/logo.jpeg`. Foto hero dashboard: `images/group.jpg`.
+## Teknologi
+PHP 8 (PDO, prepared statement), MySQL/MariaDB, AdminLTE 4 (Bootstrap 5), JavaScript.
+Berita diambil lewat endpoint JSON `website/api/news.php`, sedangkan konten lainnya langsung
+dirender PHP dari database.
