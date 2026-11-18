@@ -128,6 +128,9 @@ layout_atas($cfg['label'], $t, [$cfg['group'], $cfg['label']], "Kelola data " . 
               <a href="<?= h(url_tabel($t)) ?>" class="btn btn-sm btn-outline-secondary">Reset</a>
             <?php } ?>
           </form>
+          <?php if ($t === 'song_lyric_lines') { ?>
+            <a href="lirik.php" class="btn btn-sm btn-outline-light"><i class="bi bi-clipboard-plus me-1"></i> Tempel Lirik</a>
+          <?php } ?>
           <a href="form.php?t=<?= h($t) ?>" class="btn btn-sm btn-primary">
             <i class="bi bi-plus-lg me-1"></i> Tambah <?= h($cfg['label']) ?>
           </a>
